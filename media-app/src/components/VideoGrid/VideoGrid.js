@@ -4,25 +4,40 @@ import ReelVideo from '../../components/Videos/Reels/ReelVideo';
 import './VideoGrid.css'; // Import CSS if needed
 
 const VideoGrid = ({ videos, videoType }) => {
+  // Render videos conditionally based on video type
+  const renderVideo = (video) => {
+    const { videoUrl, title, description } = video; // Destructure properties for better readability
+
+    if (videoType === 'normal') {
+      return (
+        <NormalVideo 
+          videoUrl={videoUrl}
+          title={title}
+          description={description}
+        />
+      );
+    } else {
+      return (
+        <ReelVideo 
+          videoUrl={videoUrl}
+          title={title}
+          description={description}
+        />
+      );
+    }
+  };
+
   return (
     <div className="video-grid">
-      {videos.map((video, index) => (
-        <div className="video-grid__item" key={index}>
-          {videoType === 'normal' ? (
-            <NormalVideo 
-              videoUrl={video.videoUrl}
-              title={video.title}
-              description={video.description}
-            />
-          ) : (
-            <ReelVideo 
-              videoUrl={video.videoUrl}
-              title={video.title}
-              description={video.description}
-            />
-          )}
-        </div>
-      ))}
+      {videos.length > 0 ? ( // Check if there are videos to display
+        videos.map((video, index) => (
+          <div className="video-grid__item" key={index}>
+            {renderVideo(video)} {/* Call render function */}
+          </div>
+        ))
+      ) : (
+        <p>No videos available.</p> // Display message if no videos
+      )}
     </div>
   );
 };

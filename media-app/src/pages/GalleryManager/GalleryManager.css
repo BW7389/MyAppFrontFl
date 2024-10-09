@@ -1,138 +1,170 @@
 .gallery-manager {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fafafa; /* Màu nền nhạt */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 1200px; /* Giới hạn chiều rộng */
-    margin: auto; /* Căn giữa */
+    padding: 20px; /* Add padding to the gallery manager container */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    border-radius: 8px; /* Rounded corners for the main container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .gallery-manager__title {
-    font-size: 36px; /* Kích thước lớn cho tiêu đề */
-    margin-bottom: 20px;
-    text-align: center; /* Căn giữa tiêu đề */
-    color: #333; /* Màu chữ tối */
+    font-size: 24px; /* Increase font size for the title */
+    font-weight: bold; /* Bold title for emphasis */
+    margin-bottom: 20px; /* Space below title */
+    color: #333; /* Darker text color for better readability */
   }
   
+  /* Tabs */
   .gallery-tabs {
     display: flex;
-    justify-content: center; /* Căn giữa các tab */
+    justify-content: flex-start;
     margin-bottom: 20px;
+    border-bottom: 2px solid #ddd; /* Underline effect for tabs */
   }
   
   .tab-button {
-    padding: 12px 25px;
+    background-color: transparent; /* Transparent background for a cleaner look */
+    padding: 12px 24px; /* Padding for comfort */
+    margin-right: 12px; /* Spacing between tabs */
     border: none;
-    background-color: #e0e0e0; /* Nền tab */
-    color: #333; /* Màu chữ */
-    border-radius: 5px;
-    margin: 0 10px; /* Khoảng cách giữa các tab */
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    border-radius: 8px; /* Rounded corners */
+    position: relative; /* For positioning the pseudo-element */
+    overflow: hidden; /* To ensure the pseudo-element is contained */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color and background transitions */
   }
   
+  /* Active tab styling */
   .tab-button.active {
-    background-color: #007bff; /* Nền cho tab đang hoạt động */
-    color: white; /* Màu chữ trắng cho tab đang hoạt động */
+    color: #fff; /* White text for contrast */
+    font-weight: bold; /* Bold text for emphasis */
   }
   
+  /* Pseudo-element for active tab underline */
+  .tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align to bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+    width: 100%; /* Full width */
+    height: 4px; /* Height of the underline */
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient color for active tab */
+    border-radius: 4px; /* Rounded corners for the underline */
+    transform: scaleX(0); /* Start scale at 0 for animation */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Show underline when the tab is active */
+  .tab-button.active::after {
+    transform: scaleX(1); /* Scale to full width */
+  }
+  
+  /* Hover effect for tabs */
+  .tab-button:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  /* Add focus outline for accessibility */
+  .tab-button:focus {
+    outline: 2px solid #007bff; /* Blue outline on focus */
+    outline-offset: 2px; /* Offset for better visibility */
+  }
+  
+  /* Content Area */
   .gallery-manager__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Chiều rộng đầy đủ */
+    margin-top: 20px; /* Space above content area */
   }
   
+  /* Image Upload Form */
   .image-upload-form {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff; /* Nền trắng cho form */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Chiều rộng đầy đủ */
-    max-width: 600px; /* Giới hạn chiều rộng */
+    margin-bottom: 20px; /* Space below the upload form */
+    padding: 20px; /* Padding for the form */
+    background-color: #fff; /* White background for the upload form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .upload-controls {
     display: flex;
-    justify-content: space-between; /* Căn đều các nút */
-    align-items: center; /* Căn giữa chiều dọc */
+    align-items: center; /* Align items in the center */
   }
   
   .file-input-label {
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: #007bff; /* Màu cho nút chọn file */
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s; /* Hiệu ứng hover */
+    cursor: pointer; /* Indicate that the label is clickable */
+    background-color: #007bff; /* Blue background for choose button */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding for comfort */
+    border-radius: 4px; /* Rounded corners */
+    margin-right: 10px; /* Space between buttons */
+    transition: background-color 0.3s ease; /* Smooth background transition */
   }
   
   .file-input-label:hover {
-    background-color: #0056b3; /* Tối màu khi hover */
+    background-color: #0056b3; /* Darker blue on hover */
   }
   
   .add-btn {
-    padding: 10px 15px;
+    background-color: #28a745; /* Green background for add button */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding for comfort */
     border: none;
-    background-color: #28a745; /* Màu cho nút thêm hình */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Hiệu ứng hover */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s ease; /* Smooth background transition */
   }
   
   .add-btn:disabled {
-    background-color: #ccc; /* Màu khi nút bị vô hiệu hóa */
-    cursor: not-allowed; /* Thay đổi con trỏ */
+    background-color: #ccc; /* Gray background when disabled */
+    cursor: not-allowed; /* Indicate that the button is not clickable */
   }
   
+  .add-btn:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Preview section */
   .preview {
-    margin-top: 10px; /* Khoảng cách trên preview */
-    text-align: center; /* Căn giữa nội dung preview */
+    margin-top: 20px; /* Space above the preview */
+    text-align: center; /* Center align the preview text */
   }
   
   .preview-title {
-    margin-bottom: 5px; /* Khoảng cách giữa tiêu đề và hình ảnh */
+    font-size: 16px; /* Size for preview title */
+    margin-bottom: 10px; /* Space below title */
   }
   
   .preview-image {
-    max-width: 100%; /* Đảm bảo hình ảnh vừa khít trong container */
-    height: auto; /* Giữ tỷ lệ khung hình */
-    border-radius: 5px; /* Bo tròn hình ảnh */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
   }
   
+  /* Image Grid */
   .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Lưới responsive */
-    gap: 10px; /* Khoảng cách giữa các hình ảnh */
-    width: 100%; /* Chiều rộng đầy đủ */
+    display: grid; /* Use grid layout for images */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 16px; /* Space between grid items */
   }
   
   .image-grid__item {
-    background-color: #fff; /* Nền cho item */
-    border-radius: 5px; /* Bo tròn item */
-    overflow: hidden; /* Cắt bớt các phần tràn */
-    text-align: center; /* Căn giữa chữ */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng cho item */
-    transition: transform 0.2s; /* Hiệu ứng khi hover */
-  }
-  
-  .image-grid__item:hover {
-    transform: scale(1.05); /* Phóng to khi hover */
+    background-color: #fff; /* White background for grid items */
+    border-radius: 8px; /* Rounded corners for grid items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px; /* Padding for grid items */
+    text-align: center; /* Center align text */
   }
   
   .grid-image {
-    width: 100%; /* Đảm bảo hình ảnh đầy đủ chiều rộng */
-    height: auto; /* Giữ tỷ lệ khung hình */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Rounded corners for images */
   }
   
   .grid-image-title {
-    padding: 10px; /* Padding cho tiêu đề */
-    font-weight: bold; /* Làm đậm tiêu đề */
-    color: #333; /* Màu chữ cho tiêu đề */
+    font-size: 14px; /* Font size for image titles */
+    margin-top: 8px; /* Space above titles */
+    color: #333; /* Dark text color for titles */
   }
   

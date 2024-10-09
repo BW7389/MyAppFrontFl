@@ -1,4 +1,5 @@
 import React from 'react';
+import './TabSwitcher.css'; // Ensure to import the updated CSS file
 
 const TabSwitcher = ({ activeTab, setActiveTab }) => {
   return (

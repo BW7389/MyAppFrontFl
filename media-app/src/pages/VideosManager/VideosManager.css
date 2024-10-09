@@ -1,0 +1,82 @@
+.videos-manager {
+  padding: 20px;
+  background-color: #f9f9f9; /* Màu nền sáng hơn */
+  border-radius: 10px; /* Bo góc cho khung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng để nổi bật */
+}
+
+.videos-manager__title {
+  font-size: 28px; /* Tăng kích thước tiêu đề */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Màu chữ tối hơn cho sự dễ đọc */
+}
+
+.videos-manager__tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.videos-manager__tab {
+  background-color: #ddd;
+  padding: 12px 24px; /* Thay đổi padding cho các tab */
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+.videos-manager__tab:hover {
+  background-color: #bbb; /* Hiệu ứng hover cho tab */
+}
+
+.videos-manager__tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.videos-manager__content {
+  margin-top: 20px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Thêm khoảng cách giữa các video */
+}
+
+.video-upload-form {
+  margin-bottom: 20px; /* Thêm khoảng cách dưới form upload */
+}
+
+.file-input-label {
+  display: block; /* Hiển thị label như một khối */
+  margin-bottom: 8px; /* Khoảng cách dưới label */
+  font-weight: bold;
+  color: #555; /* Màu chữ cho label */
+}
+
+.add-btn {
+  background-color: #28a745; /* Màu xanh lá cho nút thêm video */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+.add-btn:hover {
+  background-color: #218838; /* Màu khi hover vào nút */
+}
+
+.preview {
+  margin-top: 10px; /* Khoảng cách trên phần preview */
+  background-color: #e9ecef; /* Màu nền cho preview */
+  padding: 10px;
+  border-radius: 5px; /* Bo góc cho phần preview */
+}
+

@@ -1,0 +1,33 @@
+/* FileUpload.css */
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .upload-button {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* K-pop inspired gradient */
+    border: none;
+    border-radius: 50px; /* Rounded edges */
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4); /* Soft shadow effect */
+  }
+  
+  .upload-button:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+  
+  .upload-button:focus {
+    outline: none; /* Remove outline */
+  }
+  
+  .upload-button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+  }
+  

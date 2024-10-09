@@ -1,0 +1,84 @@
+.reel-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Remove margins to fit within the grid item */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%; /* Full width of the parent */
+    max-width: 100%; /* Ensure it does not exceed parent width */
+  }
+  
+  .video-container {
+    width: 600px;
+    height: auto;
+    position: relative;
+    padding-top: 177.78%; /* Aspect ratio 9:16 */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .reel-video__video {
+    position: absolute; /* Absolute positioning for centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: auto; /* Change to auto to maintain aspect ratio */
+    height: 100%; /* Fill the height of the container */
+    min-width: 100%; /* Ensure it covers the container's width */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: contain; /* Ensure the video is contained within the box without being cut */
+    transform-origin: center center; /* Rotate around the center */
+  }
+  
+  .reel-video__info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .reel-video__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .reel-video__description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .reel-video__rotation-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .rotation-label {
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rotation-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .rotation-select:hover {
+    border-color: #0056b3;
+    background-color: #f0f8ff; 
+  }
+  
+  .rotation-select:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  }
+  

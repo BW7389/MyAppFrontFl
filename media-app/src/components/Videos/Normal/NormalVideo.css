@@ -1,0 +1,48 @@
+.normal-video__tabs {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .tab-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-button.active {
+    background-color: #007bff; /* Background color for active tab */
+    color: white; /* White text for active tab */
+  }
+  
+  .add-video-btn {
+    padding: 10px 15px;
+    background-color: #28a745; /* Color for add video button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s; /* Hover effect */
+  }
+  
+  .add-video-btn:hover {
+    background-color: #218838; /* Darker shade when hovered */
+  }
+  
+  .video-list {
+    margin-top: 20px; /* Space above the video list */
+  }
+  
+  .video-item {
+    margin-bottom: 15px; /* Space between video items */
+    border: 1px solid #ccc; /* Border around video item */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside video item */
+    background-color: #f9f9f9; /* Light background for video items */
+  }
+  

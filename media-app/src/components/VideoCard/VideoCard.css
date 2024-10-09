@@ -1,0 +1,31 @@
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  
+  .video-grid__item {
+    width: calc(33.333% - 20px);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-grid__item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* .video-grid__item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  } */
+  
+  .video-grid__item p {
+    font-size: 14px;
+    color: #666;
+  }
+  

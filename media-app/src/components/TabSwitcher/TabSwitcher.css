@@ -1,0 +1,21 @@
+.videos-manager__tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .videos-manager__tab {
+    background-color: #ddd;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .videos-manager__tab.active {
+    background-color: #007bff;
+    color: white;
+  }
+  

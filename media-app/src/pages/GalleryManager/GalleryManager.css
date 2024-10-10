@@ -1,170 +1,159 @@
 .gallery-manager {
-    padding: 20px; /* Add padding to the gallery manager container */
-    background-color: #f9f9f9; /* Light background for better contrast */
-    border-radius: 8px; /* Rounded corners for the main container */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .gallery-manager__title {
-    font-size: 24px; /* Increase font size for the title */
-    font-weight: bold; /* Bold title for emphasis */
-    margin-bottom: 20px; /* Space below title */
-    color: #333; /* Darker text color for better readability */
-  }
-  
-  /* Tabs */
-  .gallery-tabs {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd; /* Underline effect for tabs */
-  }
-  
-  .tab-button {
-    background-color: transparent; /* Transparent background for a cleaner look */
-    padding: 12px 24px; /* Padding for comfort */
-    margin-right: 12px; /* Spacing between tabs */
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 8px; /* Rounded corners */
-    position: relative; /* For positioning the pseudo-element */
-    overflow: hidden; /* To ensure the pseudo-element is contained */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color and background transitions */
-  }
-  
-  /* Active tab styling */
-  .tab-button.active {
-    color: #fff; /* White text for contrast */
-    font-weight: bold; /* Bold text for emphasis */
-  }
-  
-  /* Pseudo-element for active tab underline */
-  .tab-button::after {
-    content: '';
-    position: absolute;
-    bottom: 0; /* Align to bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center the underline */
-    width: 100%; /* Full width */
-    height: 4px; /* Height of the underline */
-    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient color for active tab */
-    border-radius: 4px; /* Rounded corners for the underline */
-    transform: scaleX(0); /* Start scale at 0 for animation */
-    transition: transform 0.3s ease; /* Smooth transition */
-  }
-  
-  /* Show underline when the tab is active */
-  .tab-button.active::after {
-    transform: scaleX(1); /* Scale to full width */
-  }
-  
-  /* Hover effect for tabs */
-  .tab-button:hover {
-    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-  }
-  
-  /* Add focus outline for accessibility */
-  .tab-button:focus {
-    outline: 2px solid #007bff; /* Blue outline on focus */
-    outline-offset: 2px; /* Offset for better visibility */
-  }
-  
-  /* Content Area */
-  .gallery-manager__content {
-    margin-top: 20px; /* Space above content area */
-  }
-  
-  /* Image Upload Form */
-  .image-upload-form {
-    margin-bottom: 20px; /* Space below the upload form */
-    padding: 20px; /* Padding for the form */
-    background-color: #fff; /* White background for the upload form */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .upload-controls {
-    display: flex;
-    align-items: center; /* Align items in the center */
-  }
-  
-  .file-input-label {
-    cursor: pointer; /* Indicate that the label is clickable */
-    background-color: #007bff; /* Blue background for choose button */
-    color: #fff; /* White text */
-    padding: 10px 20px; /* Padding for comfort */
-    border-radius: 4px; /* Rounded corners */
-    margin-right: 10px; /* Space between buttons */
-    transition: background-color 0.3s ease; /* Smooth background transition */
-  }
-  
-  .file-input-label:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .add-btn {
-    background-color: #28a745; /* Green background for add button */
-    color: #fff; /* White text */
-    padding: 10px 20px; /* Padding for comfort */
-    border: none;
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor for buttons */
-    transition: background-color 0.3s ease; /* Smooth background transition */
-  }
-  
-  .add-btn:disabled {
-    background-color: #ccc; /* Gray background when disabled */
-    cursor: not-allowed; /* Indicate that the button is not clickable */
-  }
-  
-  .add-btn:hover:not(:disabled) {
-    background-color: #218838; /* Darker green on hover */
-  }
-  
-  /* Preview section */
-  .preview {
-    margin-top: 20px; /* Space above the preview */
-    text-align: center; /* Center align the preview text */
-  }
-  
-  .preview-title {
-    font-size: 16px; /* Size for preview title */
-    margin-bottom: 10px; /* Space below title */
-  }
-  
-  .preview-image {
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for images */
-  }
-  
-  /* Image Grid */
-  .image-grid {
-    display: grid; /* Use grid layout for images */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 16px; /* Space between grid items */
-  }
-  
-  .image-grid__item {
-    background-color: #fff; /* White background for grid items */
-    border-radius: 8px; /* Rounded corners for grid items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 10px; /* Padding for grid items */
-    text-align: center; /* Center align text */
-  }
-  
-  .grid-image {
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px; /* Rounded corners for images */
-  }
-  
-  .grid-image-title {
-    font-size: 14px; /* Font size for image titles */
-    margin-top: 8px; /* Space above titles */
-    color: #333; /* Dark text color for titles */
-  }
-  
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-manager__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.gallery-tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+  background-color: transparent;
+  padding: 12px 24px;
+  margin-right: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.tab-button.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-button.active::after {
+  transform: scaleX(1);
+}
+
+.tab-button:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.gallery-manager__content {
+  margin-top: 20px;
+}
+
+.image-upload-form {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-controls {
+  display: flex;
+  align-items: center;
+}
+
+.file-input-label {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+  background-color: #0056b3;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.preview-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.image-grid__item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.grid-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.grid-image-title {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #333;
+}

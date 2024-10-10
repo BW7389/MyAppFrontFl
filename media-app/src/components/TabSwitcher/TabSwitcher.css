@@ -1,75 +1,77 @@
 .videos-manager__tabs {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd; /* Light underline for tabs */
-  }
-  
-  .videos-manager__tab {
-    background-color: transparent; /* Transparent background for a clean look */
-    padding: 12px 24px; /* Comfortable padding */
-    margin-right: 12px; /* Spacing between tabs */
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 8px; /* Rounded corners */
-    position: relative; /* For positioning the pseudo-element */
-    overflow: hidden; /* Ensure the pseudo-element is contained */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for color and background */
-  }
-  
-  /* Active tab styling */
-  .videos-manager__tab.active {
-    color: #fff; /* White text for contrast */
-    font-weight: bold; /* Bold text for emphasis */
-  }
-  
-  /* Pseudo-element for active tab underline */
-  .videos-manager__tab::after {
-    content: '';
-    position: absolute;
-    bottom: 0; /* Align to bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center the underline */
-    width: 100%; /* Full width */
-    height: 4px; /* Height of the underline */
-    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient color for active tab */
-    border-radius: 4px; /* Rounded corners for the underline */
-    transform: scaleX(0); /* Start scale at 0 for animation */
-    transition: transform 0.3s ease; /* Smooth transition */
-  }
-  
-  /* Show underline when the tab is active */
-  .videos-manager__tab.active::after {
-    transform: scaleX(1); /* Scale to full width */
-  }
-  
-  /* Hover effect for tabs */
-  .videos-manager__tab:hover {
-    background-color: rgba(0, 123, 255, 0.15); /* Light blue background on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect for depth */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-  }
-  
-  /* Add focus outline for accessibility */
-  .videos-manager__tab:focus {
-    outline: 2px solid #007bff; /* Blue outline on focus */
-    outline-offset: 2px; /* Offset for better visibility */
-  }
-  
-  /* Active tab animation */
-  .videos-manager__tab.active {
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for active state */
-    transform: translateY(-2px); /* Lift the active tab slightly */
-  }
-  
-  /* Smooth transition for tab switch */
-  .videos-manager__tab:not(.active) {
-    transition: transform 0.2s ease; /* Smooth transition for inactive tabs */
-  }
-  
-  /* Adding a subtle transition effect when switching tabs */
-  .videos-manager__tab:not(:hover):not(.active):hover {
-    transform: translateY(-1px); /* Slightly lift inactive tabs on hover */
-  }
-  
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0; /* Light grey underline for tabs */
+  padding: 0 16px; /* Padding for tab list */
+}
+
+.videos-manager__tab {
+  background-color: transparent; /* Transparent background for a clean look */
+  padding: 12px 24px; /* Comfortable padding */
+  margin-right: 12px; /* Spacing between tabs */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px; /* Rounded corners */
+  position: relative; /* For positioning the pseudo-element */
+  overflow: hidden; /* Ensure the pseudo-element is contained */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  font-family: 'Arial', sans-serif; /* Change font for a modern look */
+}
+
+/* Active tab styling */
+.videos-manager__tab.active {
+  color: #fff; /* White text for contrast */
+  background-color: #007bff; /* Blue background for active tab */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Shadow for depth */
+}
+
+/* Pseudo-element for active tab underline */
+.videos-manager__tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Align to bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  width: 100%; /* Full width */
+  height: 4px; /* Height of the underline */
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient color for active tab */
+  border-radius: 4px; /* Rounded corners for the underline */
+  transform: scaleX(0); /* Start scale at 0 for animation */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Show underline when the tab is active */
+.videos-manager__tab.active::after {
+  transform: scaleX(1); /* Scale to full width */
+}
+
+/* Hover effect for tabs */
+.videos-manager__tab:hover {
+  background-color: rgba(0, 123, 255, 0.15); /* Light blue background on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Add focus outline for accessibility */
+.videos-manager__tab:focus {
+  outline: 2px solid #0056b3; /* Darker blue outline on focus */
+  outline-offset: 2px; /* Offset for better visibility */
+}
+
+/* Active tab animation */
+.videos-manager__tab.active {
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for active state */
+  transform: translateY(-2px); /* Lift the active tab slightly */
+}
+
+/* Smooth transition for tab switch */
+.videos-manager__tab:not(.active) {
+  transition: transform 0.2s ease; /* Smooth transition for inactive tabs */
+}
+
+/* Adding a subtle transition effect when switching tabs */
+.videos-manager__tab:not(:hover):not(.active):hover {
+  transform: translateY(-1px); /* Slightly lift inactive tabs on hover */
+}

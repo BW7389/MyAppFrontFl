@@ -121,16 +121,15 @@ const ImageUploadForm = ({ onAddImage, selectedGallery }) => {
   );
 };
 
-// Component to display images
 const ImageGrid = ({ images }) => {
   if (!Array.isArray(images)) {
-    return <p>No images available.</p>; // Fallback message if images is not an array
+    return <p>No images available.</p>; 
   }
 
   return (
     <div className="image-grid">
       {images.length === 0 ? (
-        <p>No images in this gallery.</p> // Optional: message when no images are present
+        <p>No images in this gallery.</p> 
       ) : (
         images.map((image, index) => (
           <div key={index} className="image-grid__item">

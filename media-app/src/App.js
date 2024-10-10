@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import VideosManager from './pages/VideosManager/VideosManager';
 import GalleryManager from './pages/GalleryManager/GalleryManager';
+import NewsManager from './pages/NewsManager/NewsManager';
 // import Gallery from './pages/Gallery';
 // import News from './pages/News';
 
@@ -13,7 +14,7 @@ const App = () => {
         <Route path="/" element={<Dashboard />} />
         <Route path="/videos" element={<VideosManager />} />
         <Route path="/gallery" element={<GalleryManager />} />
-        {/* <Route path="/news" element={<News />} /> */}
+        <Route path="/news" element={<NewsManager />} />
       </Routes>
     </Router>
   );

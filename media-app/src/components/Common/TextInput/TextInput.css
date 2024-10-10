@@ -1,0 +1,69 @@
+/* Overall container for the text input component */
+.text-input {
+    margin-bottom: 20px; /* Space below the component */
+    padding: 20px; /* Padding for internal spacing */
+    border: 1px solid #e0e0e0; /* Light border around the component */
+    border-radius: 8px; /* Rounded corners for the container */
+    background-color: #ffffff; /* White background color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s; /* Transition effect for shadow */
+  }
+  
+  /* Hover effect for the container */
+  .text-input:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  
+  /* Label styling */
+  .text-input label {
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 10px; /* Space below the label */
+    display: block; /* Make label occupy full width */
+    color: #333; /* Dark color for better readability */
+    font-size: 16px; /* Font size for the label */
+  }
+  
+  /* Input field styling */
+  .text-input input {
+    width: 100%; /* Full width for input field */
+    padding: 12px; /* Padding inside the input field */
+    border: 1px solid #007bff; /* Border color */
+    border-radius: 4px; /* Rounded corners for the input */
+    font-size: 16px; /* Font size for input text */
+    color: #333; /* Text color */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  /* Focus state for input field */
+  .text-input input:focus {
+    border-color: #0056b3; /* Darker border color on focus */
+    box-shadow: 0 0 5px rgba(0, 87, 255, 0.5); /* Shadow effect on focus */
+  }
+  
+  /* Required field indicator */
+  .text-input input:required:invalid {
+    border-color: #dc3545; /* Red border for invalid required fields */
+  }
+  
+  /* Placeholder styling */
+  .text-input input::placeholder {
+    color: #aaa; /* Placeholder text color */
+    font-style: italic; /* Italic style for placeholder text */
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 600px) {
+    .text-input {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .text-input label {
+      font-size: 14px; /* Smaller font size for label */
+    }
+  
+    .text-input input {
+      font-size: 14px; /* Smaller font size for input text */
+    }
+  }
+  
